@@ -1,0 +1,10 @@
+------------- NAVIO -------------
+1.Controlar o tamanho do navio (comprimento e largura válidos)
+
+2.Os metodos setComprimento e setLargura deve ser implementados em cada uma das subclasses de Navio
+
+
+------------ ECLUSA ------------ 
+
+
+
