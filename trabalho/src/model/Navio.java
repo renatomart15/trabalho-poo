@@ -7,23 +7,23 @@ public abstract class Navio {
     private String portoOrigem;
     private String portoDestino;
     private String pais;
-    private int id; // nao fiz ainda
+    private int id; 
     private Capitao capitao;
     private String sentido;
 
-    public abstract void setComprimento(); 
+    public abstract void setComprimento(double comprimento); 
 
     public double getComprimento(){
         return comprimento;
     }
 
-    public abstract void setLargura(); 
+    public abstract void setLargura(double largura); 
 
     public double getLargura(){
         return largura;
     }
 
-    public void setCargaMaxima(); 
+    //public abstract void setCargaMaxima(); 
 
     public double getCargaMaxima(){
         return cargaMaxima;
@@ -59,9 +59,13 @@ public abstract class Navio {
         return pais;
     }
 
-    //public void setId()
+    public void setId(int id){
+        this.id = id;
+    }
 
-    //public int getId()
+    public int getId(){
+        return id;
+    }
 
     public void setCapitao(Capitao capitao){
         if(capitao != null){
