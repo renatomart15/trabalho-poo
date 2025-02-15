@@ -1,5 +1,5 @@
 package model;
 
 public class Capitao extends Pessoa {
-    private int idNavio;
+    private int idNavio123;
 }
