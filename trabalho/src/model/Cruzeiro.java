@@ -14,7 +14,7 @@ public class Cruzeiro extends Navio {
         this.largura = largura;
     }
 
-    //public void setCargaMaxima(double cargaMaxima){
-    //    this.cargaMaxima = cargaMaxima;
-    //}
+    public void setCargaMaxima(double cargaMaxima){
+        this.cargaMaxima = cargaMaxima;
+    }
 }
