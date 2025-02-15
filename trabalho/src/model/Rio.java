@@ -1,5 +1,7 @@
 package model;
 
+import model.exceptions.NivelDoRioInvalidoException;
+
 public class Rio {
     private double nivelDoRio;
 
@@ -7,7 +9,7 @@ public class Rio {
         if (nivelDoRio > 0) { // O nível do rio deve ser maior que 0
             this.nivelDoRio = nivelDoRio;
         } else {
-            throw new IllegalArgumentException("Nível do rio inválido. Deve ser maior que zero.");
+            throw new NivelDoRioInvalidoException("Erro: O nível do rio deve ser maior que zero.");
         }
     }
 
@@ -19,7 +21,13 @@ public class Rio {
         if (nivelDoRio > 0) { // Mantendo a restrição
             this.nivelDoRio = nivelDoRio;
         } else {
-            throw new IllegalArgumentException("Nível do rio inválido. Deve ser maior que zero.");
+            throw new NivelDoRioInvalidoException("Erro: O nível do rio deve ser maior que zero.");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Nível do Rio: " + nivelDoRio + " metros";
+    }
 }
+
