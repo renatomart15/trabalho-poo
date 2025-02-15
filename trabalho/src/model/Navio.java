@@ -7,32 +7,28 @@ public abstract class Navio {
     private String portoOrigem;
     private String portoDestino;
     private String pais;
-    private int id; 
+    private int id; // nao fiz ainda
     private Capitao capitao;
     private String sentido;
 
-    //COMPRIMENTO
-    public abstract void setComprimento(double comprimento); 
+    public abstract void setComprimento(); 
 
     public double getComprimento(){
         return comprimento;
     }
 
-    //LARGURA
-    public abstract void setLargura(double largura); 
+    public abstract void setLargura(); 
 
     public double getLargura(){
         return largura;
     }
 
-    //CARGA MAXIMA
-    public abstract void setCargaMaxima(double cargaMaxima); 
+    public void setCargaMaxima(); 
 
     public double getCargaMaxima(){
         return cargaMaxima;
     }
 
-    //PORTO ORIGEM 
     public void setPortoOrigem(String portoOrigem){
         if(portoOrigem != null){
             this.portoOrigem = portoOrigem;
@@ -43,7 +39,6 @@ public abstract class Navio {
         return portoOrigem;
     }
 
-    //PORTO DESTINO
     public void setPortoDestino(String portoDestino){
         if(portoDestino != null){
             this.portoDestino = portoDestino;
@@ -54,7 +49,6 @@ public abstract class Navio {
         return portoDestino;
     }
 
-    //PAIS
     public void setPais(String pais){
         if(pais != null){
             this.pais = pais;
@@ -65,16 +59,10 @@ public abstract class Navio {
         return pais;
     }
 
-    //ID
-    public void setId(int id){
-        this.id = id;
-    }
+    //public void setId()
 
-    public int getId(){
-        return id;
-    }
+    //public int getId()
 
-    //CAPITAO
     public void setCapitao(Capitao capitao){
         if(capitao != null){
             this.capitao = capitao;
@@ -85,7 +73,6 @@ public abstract class Navio {
         return capitao;
     }
 
-    //SENTIDO
     public void setSentido(String sentido){
         if(sentido != null && (sentido == "rio_mar" || sentido == "mar_rio")){
             this.sentido = sentido;
