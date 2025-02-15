@@ -1,4 +1,4 @@
-package trabalho_poo;
+package model;
 
 public class Eclusa{
     private double comprimento;

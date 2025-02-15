@@ -1,4 +1,4 @@
-package trabalho_poo;
+package model;
 
 public abstract class Navio {
     private double comprimento;

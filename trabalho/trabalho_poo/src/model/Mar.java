@@ -1,4 +1,4 @@
-package trabalho-poo;
+package model;
 
 public class Mar{
     private double nivelDoMar;

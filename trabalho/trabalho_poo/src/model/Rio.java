@@ -1,4 +1,4 @@
-package trabalho-poo;
+package model;
 
 public class Rio{
     private double nivelDoRio;
