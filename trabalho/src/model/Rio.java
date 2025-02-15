@@ -5,6 +5,8 @@ import model.exceptions.NivelDoRioInvalidoException;
 public class Rio {
     private double nivelDoRio;
 
+    public Rio(){}
+
     public Rio(double nivelDoRio) {
         if (nivelDoRio > 0) { // O nível do rio deve ser maior que 0
             this.nivelDoRio = nivelDoRio;
