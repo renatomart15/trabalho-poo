@@ -1,0 +1,16 @@
+CLASSES TRABALHO POO:
+
+
+* Pessoa;
+* Funcionário; 
+* Passageiro;
+* Capitão;
+* Navio;
+* Navio Cargueiro;
+* Navio Pirata;
+* Lancha;
+* Cruzeiro;
+* Rio;
+* Mar;
+* Eclusa;
+* Conteiner;
