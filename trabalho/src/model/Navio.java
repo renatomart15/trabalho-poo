@@ -3,6 +3,7 @@ package model;
 public abstract class Navio {
     private double comprimento;
     private double largura;
+    private double cargaAtual;
     private double cargaMaxima;
     private String portoOrigem;
     private String portoDestino;
@@ -23,7 +24,13 @@ public abstract class Navio {
         return largura;
     }
 
-    public void setCargaMaxima(); 
+    public abstract void setCargaAtual(double cargaAtual);
+
+    public double getCargaAtual(){
+        return cargaAtual;
+    }
+
+    public abstract void setCargaMaxima(double cargaMaxima); 
 
     public double getCargaMaxima(){
         return cargaMaxima;
@@ -59,9 +66,15 @@ public abstract class Navio {
         return pais;
     }
 
-    //public void setId()
+    public void setId(int id){
+        if(id > 0){
+            this.id = id;
+        }
+    }
 
-    //public int getId()
+    public int getId(){
+        return id;
+    }
 
     public void setCapitao(Capitao capitao){
         if(capitao != null){
@@ -81,6 +94,15 @@ public abstract class Navio {
 
     public String getSentido(){
         return sentido;
+    }
+
+    public String toString(){
+        return "Dimensoes do navio: " + getComprimento() + "x" + getLargura() +
+        "\nCarga: " + getCargaAtual() + "/" + getCargaMaxima() +
+        "\nPorto de Origem: " + getPortoOrigem() +
+        "\nPorto de Destino: " + getPortoDestino() + 
+        "\nPais: " + getPais() +
+        "";
     }
 }   
 
