@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Cruzeiro extends Navio {
     private int quantMaxPassageiros;
 	ArrayList<Passageiro> passageiros = new ArrayList();
@@ -11,8 +13,9 @@ public class Cruzeiro extends Navio {
     }
 
     public void addPasageiros(Passageiro passageiro){
-        if(passageiro != null){
+        if((passageiro != null) && passageiros.size() + 1 <= quantMaxPassageiros && passageiro.getPeso() + cargaAtual <= cargaMaxima){
             passageiros.add(passageiro);
+            cargaAtual+= passageiro.getPeso();
         }
     }
 

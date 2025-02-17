@@ -31,22 +31,15 @@ public class Eclusa{
     }
 
     public void setNivelDaEclusa(double nivelDaEclusa, double nivelDoRio, double nivelDoMar){
-        if(nivelDoRio == nivelDoMar){
-            System.out.println("O nível do rio é igual ao nível do mar. Você não precisa de uma Eclusa!!!");
+        if(nivelDoMar > nivelDoRio){
+            if(nivelDaEclusa <= nivelDoMar && nivelDaEclusa >= nivelDoRio){
+                this.nivelDaEclusa = nivelDaEclusa;
+            }
         }
         else{
-            if(nivelDoMar > nivelDoRio){
-                if(nivelDaEclusa <= nivelDoMar && nivelDaEclusa >= nivelDoRio){
-                    this.nivelDaEclusa = nivelDaEclusa;
-                }
-            }
-            else{
-                if(nivelDaEclusa <= nivelDoRio && nivelDaEclusa >= nivelDoMar){
-                    this.nivelDaEclusa = nivelDaEclusa;
-                }
+            if(nivelDaEclusa <= nivelDoRio && nivelDaEclusa >= nivelDoMar){
+                this.nivelDaEclusa = nivelDaEclusa;
             }
         }
     }
-
-
 }

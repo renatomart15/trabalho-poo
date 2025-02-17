@@ -1,8 +1,13 @@
 package model;
 
+import java.util.ArrayList;
+
 public class NavioCargueiro extends Navio {
     private int quantMaxConteiners;
     ArrayList<Conteiner> conteiners = new ArrayList();
+
+    private int quantMaxFuncionarios;
+    ArrayList<Funcionario> tripulacao = new ArrayList();
 
     public int getQuantAtualConteiners(){
         return quantAtualConteiners;
@@ -23,6 +28,19 @@ public class NavioCargueiro extends Navio {
             conteiners.add(conteiner);
             quantAtualConteiners++;
             cargaAtual += conteiner.getCarga();
+        }
+    }
+
+    private void setQuantMaxFuncionarios(int quantMaxFuncionarios){
+        if(quantMaxFuncionarios > 0){
+            this.quantMaxFuncionarios = quantMaxFuncionarios;
+        }
+    }
+
+    public void addTripulacao(Funcionario funcionario){
+        if((funcionario != null) && (funcionario.getPeso() + cargaAtual <= cargaMaxima) && (tripulacao.size() + 1 <= quantMaxFuncionarios)){
+            funcionarios.add(funcionario);
+            cargaAtual += funcionario.getPeso();
         }
     }
 
