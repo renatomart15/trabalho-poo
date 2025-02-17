@@ -2,6 +2,7 @@ package model;
 
 public abstract class Pessoa {
     private String cpf;
+    private double peso;
     private String nome;
 
     public void setCpf(String cpf){
@@ -12,6 +13,16 @@ public abstract class Pessoa {
 
     public String getCpf(){
         return cpf;
+    }
+
+    public void setPeso(double peso){
+        if(peso > 0){
+            this.peso = peso;
+        }
+    }
+
+    public double getPeso(){
+        return peso;
     }
 
     public void setNome(String nome){

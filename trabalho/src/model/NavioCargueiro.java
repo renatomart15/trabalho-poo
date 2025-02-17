@@ -1,7 +1,6 @@
 package model;
 
 public class NavioCargueiro extends Navio {
-    private int quantAtualConteiners;
     private int quantMaxConteiners;
     ArrayList<Conteiner> conteiners = new ArrayList();
 
@@ -20,10 +19,22 @@ public class NavioCargueiro extends Navio {
     }
 
     public void addConteiner(Conteiner conteiner){
-        if((getCargaAtual() + conteiner.getCarga() <= getCargaMaxima()) && quantAtualConteiners + 1 <= quantMaxConteiners){
+        if((getCargaAtual() + conteiner.getCarga() <= getCargaMaxima()) && conteiners.size() + 1 <= quantMaxConteiners){
             conteiners.add(conteiner);
             quantAtualConteiners++;
             cargaAtual += conteiner.getCarga();
         }
+    }
+
+    public String toString(){
+        return "Dimensoes do navio: " + getComprimento() + "x" + getLargura() +
+        "\nCarga: " + getCargaAtual() + "/" + getCargaMaxima() +
+        "\nPorto de Origem: " + getPortoOrigem() +
+        "\nPorto de Destino: " + getPortoDestino() + 
+        "\nPais: " + getPais() +
+        "\nID: " + getId() +
+        "\nCapitao: " + capitao.getNome() +
+        "\nSentido: " + getSentido() +
+        "\nQuantidade de conteiners: " + conteiners.size() + "/" + quantMaxConteiners;
     }
 }
