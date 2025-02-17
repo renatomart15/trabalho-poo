@@ -1,9 +1,10 @@
 package model;
 
 public abstract class Pessoa {
-    private String cpf;
-    private double peso;
     private String nome;
+    private double peso;
+    private String cpf;
+    
 
     public void setCpf(String cpf){
         if(cpf.length() == 11){
@@ -37,8 +38,9 @@ public abstract class Pessoa {
 
     public Pessoa(){}
 
-    public Pessoa(String cpf, String nome){
-        setCpf(cpf);
+    public Pessoa(String nome, double peso, String cpf){
         setNome(nome);
+        setPeso(peso);
+        setCpf(cpf);
     }
 }

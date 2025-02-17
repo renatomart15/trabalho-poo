@@ -12,4 +12,17 @@ public class Capitao extends Pessoa {
     public Navio getNavio(){
         return navio;
     }
+
+    public Capitao(){}
+
+    public Capitao(String cpf, double peso, String nome){
+        setCpf(cpf);
+        setPeso(peso);
+        setNome(nome);
+    }
+
+    public Capitao(String cpf, double peso, String nome, Navio navio){
+        Capitao(cpf, peso, nome);
+        setNavio(navio);
+    }
 }

@@ -116,5 +116,19 @@ public abstract class Navio {
         "\nCapitao: " + capitao.getNome()
         "Sentido: " + getSentido();
     }
+
+    public Navio(){}
+
+    public Navio(double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido){
+        setComprimento(comprimento);
+        setLargura(largura);
+        setCargaMaxima(cargaMaxima);
+        setPortoOrigem(portoOrigem);
+        setPortoDestino(portoDestino);
+        setPais(pais);
+        setId(id);
+        setCapitao(capitao);
+        setSentido(sentido);
+    }
 }   
 

@@ -15,4 +15,11 @@ public class Passageiro extends Pessoa {
     public void setIdPassagem(String idPassagem) {
         this.idPassagem = idPassagem;
     }
+
+    public Passageiro(){}
+
+    public Passageiro(String nome, double peso, String cpf, String idPassagem){
+        super(nome, peso, cpf);
+        setIdPassagem(idPassagem);
+    }
 }

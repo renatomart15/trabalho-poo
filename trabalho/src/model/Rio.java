@@ -29,5 +29,11 @@ public class Rio {
     public String toString() {
         return "Nível do Rio: " + nivelDoRio + " metros";
     }
+
+    public Rio(){}
+
+    public Rio(double nivelDoRio){
+        setNivelDoRio(nivelDoRio);
+    }
 }
 

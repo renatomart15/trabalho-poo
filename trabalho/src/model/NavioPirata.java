@@ -20,4 +20,22 @@ public class NavioPirata extends Navio {
     public String DispararCanhao(){
         return "Booom!!!";
     }
+
+    public String toString(){
+        return "Dimensoes do navio: " + getComprimento() + "x" + getLargura() +
+        "\nCarga: " + getCargaAtual() + "/" + getCargaMaxima() +
+        "\nPorto de Origem: " + getPortoOrigem() +
+        "\nPorto de Destino: " + getPortoDestino() + 
+        "\nPais: " + getPais() +
+        "\nID: " + getId() +
+        "\nCapitao: " + capitao.getNome() +
+        "\nSentido: " + getSentido();
+    }
+
+    public NavioPirata(){}
+
+    public NavioPirata(double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido, int quantMaxFuncionarios){
+        super(compriento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+        setQuantMaxFuncionarios(quantMaxFuncionarios);
+    }
 }

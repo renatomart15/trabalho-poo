@@ -55,4 +55,11 @@ public class NavioCargueiro extends Navio {
         "\nSentido: " + getSentido() +
         "\nQuantidade de conteiners: " + conteiners.size() + "/" + quantMaxConteiners;
     }
+
+    public NavioCargueiro(){}
+
+    public NavioCargueiro(double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido, int quantMaxConteiners){
+        super(compriento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+        setQuantMaxConteiners(quantMaxConteiners);
+    }
 }

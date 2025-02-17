@@ -8,7 +8,7 @@ public class Eclusa{
     private double capacidadeMinima;
     private double vazao;
     //private double tempoParaEncher;
-    private double preco; // depende do tipo da embarcação
+    //private double preco; // depende do tipo da embarcação
 
     public void setComprimento(double comprimento){
         if(comprimento >= 0 && comprimento <= 300){
@@ -41,5 +41,42 @@ public class Eclusa{
                 this.nivelDaEclusa = nivelDaEclusa;
             }
         }
+    }
+
+    public void setCapacidadeMaxima(double capacidadeMaxima){
+        if(capacidadeMaxima > 0){
+            this.capacidadeMaxima = capacidadeMaxima;
+        }
+    }
+
+    public double getCapacidadeMaxima(){
+        return capacidadeMaxima;
+    }
+
+    public void setCapacidadeMinima(double capacidadeMinima){
+        if(capacidadeMinima > 0){
+            this.capacidadeMinima = capacidadeMinima;
+        }
+    }
+
+    public double getCapacidadeMinima(){
+        return capacidadeMinima;
+    }
+
+    public void setVazao(double vazao){
+        if(vazao > 0){
+            this.vazao = vazao;
+        }
+    }
+
+    public Eclusa(){}
+
+    public Eclusa(double comprimento, double largura, double nivelDaEclusa, double capacidadeMaxima, double capacidadeMinima, double vazao, double preco){
+        setComprimento(comprimento);
+        setLargura(largura);
+        setNivelDaEclusa(nivelDaEclusa);
+        setCapacidadeMaxima(capacidadeMaxima);
+        setCapacidadeMinima(capacidadeMinima);
+        setVazao(vazao);
     }
 }

@@ -12,4 +12,10 @@ public class Conteiner {
     public double getCarga(){
         return carga;
     }
+
+    public Conteiner(){}
+
+    public Conteiner(double carga){
+        setCarga(carga);
+    }
 }

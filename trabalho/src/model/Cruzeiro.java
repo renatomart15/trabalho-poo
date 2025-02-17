@@ -30,4 +30,10 @@ public class Cruzeiro extends Navio {
         "\nSentido: " + getSentido() +
         "\nQuantidade de passageiros: " + passageiros.size() + "/" + quantMaxPassageiros;
     }
+
+    public void Cruzeiro(){}
+
+    public void Cruzeiro(){
+        
+    } 
 }

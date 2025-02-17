@@ -9,4 +9,10 @@ public class Lancha extends Navio {
             cargaAtual+= passageiro.getPeso();
         }
     }
+
+    public Lancha(){}
+
+    public Lancha(double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido){
+        super(comprimento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+    }
 }
