@@ -12,7 +12,7 @@ public abstract class Navio {
     private Capitao capitao;
     private String sentido;
 
-    public void setComprimento(){
+    public void setComprimento(double comprimento){
         if(comprimento > 0){
             this.comprimento = comprimento;
         }
@@ -112,8 +112,8 @@ public abstract class Navio {
         "\nPorto de Origem: " + getPortoOrigem() +
         "\nPorto de Destino: " + getPortoDestino() + 
         "\nPais: " + getPais() +
-        "\nID: " + getId()
-        "\nCapitao: " + capitao.getNome()
+        "\nID: " + getId() +
+        "\nCapitao: " + capitao.getNome() +
         "Sentido: " + getSentido();
     }
 
