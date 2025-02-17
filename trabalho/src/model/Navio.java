@@ -102,7 +102,9 @@ public abstract class Navio {
         "\nPorto de Origem: " + getPortoOrigem() +
         "\nPorto de Destino: " + getPortoDestino() + 
         "\nPais: " + getPais() +
-        "";
+        "\nID: " + getId()
+        "\nCapitao: " + capitao.getNome()
+        "Sentido: " + getSentido();
     }
 }   
 
