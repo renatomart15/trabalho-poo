@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class NavioCargueiro extends Navio {
+    private int quantAtualConteiners;
     private int quantMaxConteiners;
     ArrayList<Conteiner> conteiners = new ArrayList();
 
@@ -27,7 +28,7 @@ public class NavioCargueiro extends Navio {
         if((getCargaAtual() + conteiner.getCarga() <= getCargaMaxima()) && conteiners.size() + 1 <= quantMaxConteiners){
             conteiners.add(conteiner);
             quantAtualConteiners++;
-            cargaAtual += conteiner.getCarga();
+            adicionarCarga(conteiner.getCarga());
         }
     }
 
@@ -38,9 +39,9 @@ public class NavioCargueiro extends Navio {
     }
 
     public void addTripulacao(Funcionario funcionario){
-        if((funcionario != null) && (funcionario.getPeso() + cargaAtual <= cargaMaxima) && (tripulacao.size() + 1 <= quantMaxFuncionarios)){
-            funcionarios.add(funcionario);
-            cargaAtual += funcionario.getPeso();
+        if((funcionario != null) && (funcionario.getPeso() + getCargaAtual() <= getCargaMaxima()) && (tripulacao.size() + 1 <= quantMaxFuncionarios)){
+            tripulacao.add(funcionario);
+            adicionarCarga(funcionario.getPeso());
         }
     }
 
@@ -51,7 +52,7 @@ public class NavioCargueiro extends Navio {
         "\nPorto de Destino: " + getPortoDestino() + 
         "\nPais: " + getPais() +
         "\nID: " + getId() +
-        "\nCapitao: " + capitao.getNome() +
+        "\nCapitao: " + getCapitao().getNome() +
         "\nSentido: " + getSentido() +
         "\nQuantidade de conteiners: " + conteiners.size() + "/" + quantMaxConteiners;
     }
@@ -59,7 +60,7 @@ public class NavioCargueiro extends Navio {
     public NavioCargueiro(){}
 
     public NavioCargueiro(double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido, int quantMaxConteiners){
-        super(compriento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+        super(comprimento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
         setQuantMaxConteiners(quantMaxConteiners);
     }
 }

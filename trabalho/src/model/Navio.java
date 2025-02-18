@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Navio {
+public class Navio {
     private double comprimento;
     private double largura;
     private double cargaAtual;
@@ -32,8 +32,18 @@ public abstract class Navio {
         return largura;
     }
 
+    public void setCargaAtual(double cargaAtual){
+        if(cargaAtual > 0){
+            this.cargaAtual = cargaAtual;
+        }
+    }
+
     public double getCargaAtual(){
         return cargaAtual;
+    }
+
+    public void adicionarCarga(double carga){
+        setCargaAtual(getCargaAtual() + carga);
     }
 
     public void setCargaMaxima(double cargaMaxima){

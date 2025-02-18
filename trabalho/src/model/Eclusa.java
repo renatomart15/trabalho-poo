@@ -30,7 +30,10 @@ public class Eclusa{
         return largura;
     }
 
-    public void setNivelDaEclusa(double nivelDaEclusa, double nivelDoRio, double nivelDoMar){
+    public void setNivelDaEclusa(double nivelDaEclusa){
+        double nivelDoMar = getNivelDoMar();
+        double nivelDoRio = getNivelDoRio();
+
         if(nivelDoMar > nivelDoRio){
             if(nivelDaEclusa <= nivelDoMar && nivelDaEclusa >= nivelDoRio){
                 this.nivelDaEclusa = nivelDaEclusa;

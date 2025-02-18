@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class NavioPirata extends Navio {
     private int quantMaxFuncionarios;
     ArrayList<Funcionario> tripulacao = new ArrayList();
@@ -11,9 +13,9 @@ public class NavioPirata extends Navio {
     }
 
     public void addTripulacao(Funcionario funcionario){
-        if((funcionario != null) && (funcionario.getPeso() + cargaAtual <= cargaMaxima) && (tripulacao.size() + 1 <= quantMaxFuncionarios)){
-            funcionarios.add(funcionario);
-            cargaAtual += funcionario.getPeso();
+        if((funcionario != null) && (funcionario.getPeso() + getCargaAtual() <= getCargaMaxima()) && (tripulacao.size() + 1 <= quantMaxFuncionarios)){
+            tripulacao.add(funcionario);
+            adicionarCarga(funcionario.getPeso());
         }
     }
 
@@ -28,14 +30,14 @@ public class NavioPirata extends Navio {
         "\nPorto de Destino: " + getPortoDestino() + 
         "\nPais: " + getPais() +
         "\nID: " + getId() +
-        "\nCapitao: " + capitao.getNome() +
+        "\nCapitao: " + getCapitao().getNome() +
         "\nSentido: " + getSentido();
     }
 
     public NavioPirata(){}
 
     public NavioPirata(double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido, int quantMaxFuncionarios){
-        super(compriento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+        super(comprimento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
         setQuantMaxFuncionarios(quantMaxFuncionarios);
     }
 }

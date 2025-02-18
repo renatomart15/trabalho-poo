@@ -15,7 +15,7 @@ public class Mar{
 
     public Mar(){}
 
-    public Mar(nivelDoMar){
+    public Mar(double nivelDoMar){
         setNivelDoMar(nivelDoMar);
     }
 }

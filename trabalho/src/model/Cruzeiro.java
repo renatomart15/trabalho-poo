@@ -6,16 +6,16 @@ public class Cruzeiro extends Navio {
     private int quantMaxPassageiros;
 	ArrayList<Passageiro> passageiros = new ArrayList();
 
-    public void setCargaMaxima(double cargaMaxima){
-        if(cargaMaxima > 0){
-            this.cargaMaxima = cargaMaxima;
+    public void setQuantMaxPassageiros(int quantMaxPassageiros){
+        if(quantMaxPassageiros > 0){
+            this.quantMaxPassageiros = quantMaxPassageiros;
         }
     }
 
     public void addPasageiros(Passageiro passageiro){
-        if((passageiro != null) && passageiros.size() + 1 <= quantMaxPassageiros && passageiro.getPeso() + cargaAtual <= cargaMaxima){
+        if((passageiro != null) && passageiros.size() + 1 <= quantMaxPassageiros && passageiro.getPeso() + getCargaAtual() <= getCargaMaxima()){
             passageiros.add(passageiro);
-            cargaAtual+= passageiro.getPeso();
+            adicionarCarga(passageiro.getPeso());
         }
     }
 
@@ -26,14 +26,15 @@ public class Cruzeiro extends Navio {
         "\nPorto de Destino: " + getPortoDestino() + 
         "\nPais: " + getPais() +
         "\nID: " + getId() +
-        "\nCapitao: " + capitao.getNome() +
+        "\nCapitao: " + getCapitao().getNome() +
         "\nSentido: " + getSentido() +
         "\nQuantidade de passageiros: " + passageiros.size() + "/" + quantMaxPassageiros;
     }
 
     public void Cruzeiro(){}
 
-    public void Cruzeiro(){
-        
-    } 
+    public Cruzeiro(double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido, int quantMaxPassageiros){
+        super(comprimento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+        setQuantMaxPassageiros(quantMaxPassageiros);
+    }
 }
