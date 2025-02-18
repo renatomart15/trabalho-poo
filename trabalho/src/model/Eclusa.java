@@ -30,9 +30,9 @@ public class Eclusa{
         return largura;
     }
 
-    public void setNivelDaEclusa(double nivelDaEclusa){
-        double nivelDoMar = getNivelDoMar();
-        double nivelDoRio = getNivelDoRio();
+    public void setNivelDaEclusa(double nivelDaEclusa, Rio rio, Mar mar){
+        double nivelDoMar = mar.getNivelDoMar();
+        double nivelDoRio = rio.getNivelDoRio();
 
         if(nivelDoMar > nivelDoRio){
             if(nivelDaEclusa <= nivelDoMar && nivelDaEclusa >= nivelDoRio){
@@ -74,10 +74,10 @@ public class Eclusa{
 
     public Eclusa(){}
 
-    public Eclusa(double comprimento, double largura, double nivelDaEclusa, double capacidadeMaxima, double capacidadeMinima, double vazao, double preco){
+    public Eclusa(double comprimento, double largura, double nivelDaEclusa, Rio rio, Mar mar, double capacidadeMaxima, double capacidadeMinima, double vazao, double preco){
         setComprimento(comprimento);
         setLargura(largura);
-        setNivelDaEclusa(nivelDaEclusa);
+        setNivelDaEclusa(nivelDaEclusa, rio, mar);
         setCapacidadeMaxima(capacidadeMaxima);
         setCapacidadeMinima(capacidadeMinima);
         setVazao(vazao);
