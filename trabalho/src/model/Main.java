@@ -8,5 +8,6 @@ public class Main {
 		cap1.setNome("Renato");
 		c1.setCapitao(cap1);
 		System.out.println(cap1);
+		System.out.println("oi");
 	}
 }
