@@ -26,8 +26,9 @@ public class Funcionario extends Pessoa {
 
     public Funcionario(){}
 
-    public Funcionario(String nome, double peso, String cpf, String funcao, double salario){
-        super(nome, peso, cpf);
+    public Funcionario(String nome, String cpf, String funcao, double salario){
+        setNome(nome);
+        setCpf(cpf);
         setFuncao(funcao);
         setSalario(salario);
     }

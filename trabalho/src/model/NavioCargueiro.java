@@ -2,17 +2,12 @@ package model;
 
 import java.util.ArrayList;
 
-public class NavioCargueiro extends Navio {
-    private int quantAtualConteiners;
+public class NavioCargueiro extends Embarcacao{
     private int quantMaxConteiners;
     ArrayList<Conteiner> conteiners = new ArrayList();
 
-    private int quantMaxFuncionarios;
-    ArrayList<Funcionario> tripulacao = new ArrayList();
-
-    public int getQuantAtualConteiners(){
-        return quantAtualConteiners;
-    }
+    private int quantMaxTripulantes;
+    ArrayList<Tripulante> tripulacao = new ArrayList();
 
     public void setQuantMaxConteiners(int quantMaxConteiners){
         if(quantMaxConteiners > 0){
@@ -24,24 +19,26 @@ public class NavioCargueiro extends Navio {
         return quantMaxConteiners;
     }
 
+    public void setQuantMaxTripulantes(int quantMaxTripulantes){
+        if(quantMaxTripulantes > 0){
+            this.quantMaxTripulantes = quantMaxTripulantes;
+        }
+    }
+
+    public int getQuantMaxTripulantes(){
+        return quantMaxTripulantes;
+    }
+
     public void addConteiner(Conteiner conteiner){
         if((getCargaAtual() + conteiner.getCarga() <= getCargaMaxima()) && conteiners.size() + 1 <= quantMaxConteiners){
             conteiners.add(conteiner);
-            quantAtualConteiners++;
             adicionarCarga(conteiner.getCarga());
         }
     }
 
-    private void setQuantMaxFuncionarios(int quantMaxFuncionarios){
-        if(quantMaxFuncionarios > 0){
-            this.quantMaxFuncionarios = quantMaxFuncionarios;
-        }
-    }
-
-    public void addTripulacao(Funcionario funcionario){
-        if((funcionario != null) && (funcionario.getPeso() + getCargaAtual() <= getCargaMaxima()) && (tripulacao.size() + 1 <= quantMaxFuncionarios)){
-            tripulacao.add(funcionario);
-            adicionarCarga(funcionario.getPeso());
+    public void addTripulante(Tripulante tripulante){
+        if((tripulante != null) && (tripulacao.size() + 1 <= quantMaxFuncionarios)){
+            tripulacao.add(tripulante);
         }
     }
 

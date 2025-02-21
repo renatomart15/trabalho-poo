@@ -1,7 +1,7 @@
 package model;
 
 public class Conteiner {
-    private double carga; // ate 2 toneladas
+    private double carga; 
 
     public void setCarga(double carga){
         if(carga >= 0 && carga <= 2){

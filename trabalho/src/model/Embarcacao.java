@@ -1,9 +1,10 @@
 package model;
 
-public class Navio {
+public class Embarcacao {
+    private String nome;
     private double comprimento;
     private double largura;
-    private double cargaAtual;
+    private double carga;
     private double cargaMaxima;
     private String portoOrigem;
     private String portoDestino;
@@ -11,6 +12,16 @@ public class Navio {
     private int id; 
     private Capitao capitao;
     private String sentido;
+
+    public void setNome(String nome){
+        if(nome != null){
+            this.nome = nome;
+        }
+    }
+
+    public String getNome(){
+        return nome;
+    }
 
     public void setComprimento(double comprimento){
         if(comprimento > 0){
@@ -32,18 +43,18 @@ public class Navio {
         return largura;
     }
 
-    public void setCargaAtual(double cargaAtual){
+    public void setCarga(double carga){
         if(cargaAtual > 0){
-            this.cargaAtual = cargaAtual;
+            this.carga = cargaAtual;
         }
     }
 
-    public double getCargaAtual(){
+    public double getCarga(){
         return cargaAtual;
     }
 
     public void adicionarCarga(double carga){
-        setCargaAtual(getCargaAtual() + carga);
+        setCarga(getCarga() + carga);
     }
 
     public void setCargaMaxima(double cargaMaxima){
@@ -117,7 +128,7 @@ public class Navio {
     }
 
     public String toString(){
-        return "Dimensoes do navio: " + getComprimento() + "x" + getLargura() +
+        return "Dimensoes da embarcacao: " + getComprimento() + "x" + getLargura() +
         "\nCarga: " + getCargaAtual() + "/" + getCargaMaxima() +
         "\nPorto de Origem: " + getPortoOrigem() +
         "\nPorto de Destino: " + getPortoDestino() + 
@@ -127,9 +138,10 @@ public class Navio {
         "Sentido: " + getSentido();
     }
 
-    public Navio(){}
+    public Embarcacao(){}
 
-    public Navio(double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido){
+    public Embarcacao(String nome, double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido){
+        setNome(nome);
         setComprimento(comprimento);
         setLargura(largura);
         setCargaMaxima(cargaMaxima);

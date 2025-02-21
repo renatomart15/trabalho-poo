@@ -1,25 +1,15 @@
 package model;
 
-public class Capitao extends Pessoa {
-    private Navio navio;
+public class Capitao extends Pessoa{
+    private String nomeNavio;
 
-    public void setNavio(Navio navio){
-        if(navio != null){
+    public void setNomeNavio(String nomeNavio){
+        if(nomeNavio != ){
             this.navio = navio;
         }
     }
 
-    public Navio getNavio(){
-        return navio;
-    }
-
     public Capitao(){}
-
-    public Capitao(String cpf, double peso, String nome){
-        setCpf(cpf);
-        setPeso(peso);
-        setNome(nome);
-    }
 
     public Capitao(String cpf, double peso, String nome, Navio navio){
         setCpf(cpf);

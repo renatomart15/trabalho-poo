@@ -12,7 +12,11 @@ public class Cruzeiro extends Navio {
         }
     }
 
-    public void addPasageiros(Passageiro passageiro){
+    public int getQuantMaxPassageiros(){
+        return quantMaxPassageiros;
+    }
+
+    public void addPassageiros(Passageiro passageiro){
         if((passageiro != null) && passageiros.size() + 1 <= quantMaxPassageiros && passageiro.getPeso() + getCargaAtual() <= getCargaMaxima()){
             passageiros.add(passageiro);
             adicionarCarga(passageiro.getPeso());
