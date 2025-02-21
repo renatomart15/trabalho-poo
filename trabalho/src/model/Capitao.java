@@ -5,14 +5,14 @@ public class Capitao extends Pessoa{
 
     public void setNomeNavio(String nomeNavio){
         if(nomeNavio != null){
-            this.navio = navio;
+            this.nomeNavio = nomeNavio;
         }
     }
 
     public Capitao(){}
 
-    public Capitao(String cpf, String nome){
-        setCpf(cpf);
+    public Capitao(String nome, String nomeNavio){
         setNome(nome);
+        setNomeNavio(nomeNavio);
     }
 }

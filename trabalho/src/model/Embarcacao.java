@@ -44,13 +44,13 @@ public class Embarcacao {
     }
 
     public void setCarga(double carga){
-        if(cargaAtual > 0){
-            this.carga = cargaAtual;
+        if(carga > 0){
+            this.carga = carga;
         }
     }
 
     public double getCarga(){
-        return cargaAtual;
+        return carga;
     }
 
     public void adicionarCarga(double carga){
@@ -129,7 +129,7 @@ public class Embarcacao {
 
     public String toString(){
         return "Dimensoes da embarcacao: " + getComprimento() + "x" + getLargura() +
-        "\nCarga: " + getCargaAtual() + "/" + getCargaMaxima() +
+        "\nCarga: " + getCarga() + "/" + getCargaMaxima() +
         "\nPorto de Origem: " + getPortoOrigem() +
         "\nPorto de Destino: " + getPortoDestino() + 
         "\nPais: " + getPais() +

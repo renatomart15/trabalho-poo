@@ -13,7 +13,7 @@ public class MenuController {
 
     public MenuController() {
         this.scanner = new Scanner(System.in);
-        this.eclusa = new Eclusa(5);
+        this.eclusa = new Eclusa();
         this.eclusaView = new EclusaView();
         this.menuView = new MenuView();
         this.eclusaController = new EclusaController(eclusa, eclusaView);
@@ -22,19 +22,27 @@ public class MenuController {
     public void iniciarMenu() {
         while (true) {
             menuView.menuPrincipal();
+            menuView.mostrarMensagem("\nEscolha uma opção: ");
             int opcao = scanner.nextInt();
             scanner.nextLine();
+
+            while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4 && opcao != 0){
+                menuView.mostrarMensagem("Opção inválida");
+                menuView.mostrarMensagem("Escolha uma opção: ");
+                opcao = scanner.nextInt();
+                scanner.nextLine();
+            }
             
             switch (opcao) {
                 case 1 -> menuEmbarcacao();
-                case 2 -> System.out.println("Funcionalidade de carga ainda não implementada.");
+                case 2 -> menuView.mostrarMensagem("Funcionalidade de carga ainda não implementada.");
                 case 3 -> menuPessoa();
                 case 4 -> menuEclusa();
                 case 0 -> {
-                    System.out.println("Saindo...");
+                    menuView.mostrarMensagem("Saindo...");
                     return;
                 }
-                default -> System.out.println("Opção inválida.");
+                
             }
         }
     }
@@ -42,17 +50,24 @@ public class MenuController {
     private void menuEmbarcacao() {
         while (true) {
             menuView.menuEmbarcacao();
+            menuView.mostrarMensagem("\nEsolha uma opção: ");
             int opcao = scanner.nextInt();
             scanner.nextLine();
+
+            while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 0){
+                menuView.mostrarMensagem("Opção inválida");
+                menuView.mostrarMensagem("Escolha uma opção: ");
+                opcao = scanner.nextInt();
+                scanner.nextLine();
+            }
             
             switch (opcao) {
-                case 1 -> System.out.println("Cadastrando Navio Cargueiro...");
-                case 2 -> System.out.println("Cadastrando Cruzeiro...");
-                case 3 -> System.out.println("Cadastrando Lancha...");
+                case 1 -> menuView.mostrarMensagem("Cadastrando Navio Cargueiro...");
+                case 2 -> menuView.mostrarMensagem("Cadastrando Cruzeiro...");
+                case 3 -> menuView.mostrarMensagem("Cadastrando Lancha...");
                 case 0 -> {
                     return;
-                }
-                default -> System.out.println("Opção inválida.");
+                } 
             }
         }
     }
@@ -62,15 +77,21 @@ public class MenuController {
             menuView.menuPessoa();
             int opcao = scanner.nextInt();
             scanner.nextLine();
+
+            while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 0){
+                menuView.mostrarMensagem("Opção inválida");
+                menuView.mostrarMensagem("Escolha uma opção: ");
+                opcao = scanner.nextInt();
+                scanner.nextLine();
+            }
             
             switch (opcao) {
-                case 1 -> System.out.println("Cadastrando Capitão...");
-                case 2 -> System.out.println("Cadastrando Tripulante...");
-                case 3 -> System.out.println("Cadastrando Passageiro...");
+                case 1 -> menuView.mostrarMensagem("Cadastrando Capitão...");
+                case 2 -> menuView.mostrarMensagem("Cadastrando Tripulante...");
+                case 3 -> menuView.mostrarMensagem("Cadastrando Passageiro...");
                 case 0 -> {
                     return;
-                }
-                default -> System.out.println("Opção inválida.");
+                }   
             }
         }
     }
@@ -80,14 +101,20 @@ public class MenuController {
             menuView.menuEclusa();
             int opcao = scanner.nextInt();
             scanner.nextLine();
+
+            while(opcao != 1 && opcao != 2 && opcao != 0){
+                menuView.mostrarMensagem("Opção inválida");
+                menuView.mostrarMensagem("Escolha uma opção: ");
+                opcao = scanner.nextInt();
+                scanner.nextLine();
+            }
             
             switch (opcao) {
-                case 1 -> System.out.println("Cadastrando Eclusa...");
+                case 1 -> menuView.mostrarMensagem("Cadastrando Eclusa...");
                 case 2 -> eclusaController.operarEclusa();
                 case 0 -> {
                     return;
-                }
-                default -> System.out.println("Opção inválida.");
+                } 
             }
         }
     }

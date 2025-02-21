@@ -1,7 +1,5 @@
-package main;
-
 import view.MenuView;
-import model.MenuController;
+import controller.MenuController;
 
 public class Main {
     public static void main(String[] args) {

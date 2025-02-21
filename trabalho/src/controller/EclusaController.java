@@ -17,9 +17,6 @@ public class EclusaController {
         if (eclusa.filaVazia()) {
             view.mostrarMensagem("Nenhuma embarcação aguardando na fila.");
         }
-        else if(){
-            
-        }
         else{   
             Embarcacao embarcacao = eclusa.liberarProximaEmbarcacao();
             view.mostrarMensagem("Operando a eclusa para embarcação: " + embarcacao.getNome());
