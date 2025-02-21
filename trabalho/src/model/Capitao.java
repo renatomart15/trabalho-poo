@@ -4,7 +4,7 @@ public class Capitao extends Pessoa{
     private String nomeNavio;
 
     public void setNomeNavio(String nomeNavio){
-        if(nomeNavio != ){
+        if(nomeNavio != null){
             this.navio = navio;
         }
     }

@@ -1,6 +1,7 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Eclusa{
     private double comprimento;
@@ -50,12 +51,9 @@ public class Eclusa{
 
     public Eclusa(){}
 
-    public Eclusa(double comprimento, double largura,){
+    public Eclusa(double comprimento, double largura){
         setComprimento(comprimento);
         setLargura(largura);
-        setNivelDaEclusa(nivelDaEclusa, rio, mar);
-        setCapacidadeMaxima(capacidadeMaxima);
-        setCapacidadeMinima(capacidadeMinima);
-        setVazao(vazao);
+        filaDeEspera = new LinkedList<>();
     }
 }

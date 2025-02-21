@@ -1,8 +1,11 @@
 package main;
 
-public class Main {
+import view.MenuView;
+import model.MenuController;
 
-	public static void main(String[] args){
-		
-	}
+public class Main {
+    public static void main(String[] args) {
+        MenuController menuController = new MenuController();
+        menuController.iniciarMenu();
+    }
 }
