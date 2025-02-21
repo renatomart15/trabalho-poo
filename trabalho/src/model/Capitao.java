@@ -11,10 +11,8 @@ public class Capitao extends Pessoa{
 
     public Capitao(){}
 
-    public Capitao(String cpf, double peso, String nome, Navio navio){
+    public Capitao(String cpf, String nome){
         setCpf(cpf);
-        setPeso(peso);
         setNome(nome);
-        setNavio(navio);
     }
 }
