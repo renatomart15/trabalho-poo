@@ -26,7 +26,7 @@ public class MenuController {
             int opcao = scanner.nextInt();
             scanner.nextLine();
 
-            while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4 && opcao != 0){
+            while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 0){
                 menuView.mostrarMensagem("Opção inválida");
                 menuView.mostrarMensagem("Escolha uma opção: ");
                 opcao = scanner.nextInt();
@@ -35,14 +35,12 @@ public class MenuController {
             
             switch (opcao) {
                 case 1 -> menuEmbarcacao();
-                case 2 -> menuView.mostrarMensagem("Funcionalidade de carga ainda não implementada.");
-                case 3 -> menuPessoa();
-                case 4 -> menuEclusa();
+                case 2 -> menuConteiner();
+                case 3 -> menuEclusa();
                 case 0 -> {
                     menuView.mostrarMensagem("Saindo...");
                     return;
                 }
-                
             }
         }
     }
@@ -50,6 +48,32 @@ public class MenuController {
     private void menuEmbarcacao() {
         while (true) {
             menuView.menuEmbarcacao();
+            menuView.mostrarMensagem("\nEsolha uma opção: ");
+            int opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4 && opcao != 0){
+                menuView.mostrarMensagem("Opção inválida");
+                menuView.mostrarMensagem("Escolha uma opção: ");
+                opcao = scanner.nextInt();
+                scanner.nextLine();
+            }
+            
+            switch (opcao) {
+                case 1 -> menuView.mostrarMensagem("Cadastrando Navio Cargueiro...");
+                case 2 -> menuView.mostrarMensagem("Cadastrando Cruzeiro...");
+                case 3 -> menuView.mostrarMensagem("Cadastrando Lancha...");
+                case 4 -> menuView.mostrarMensagem("Listanto Embarcações...");
+                case 0 -> {
+                    return;
+                } 
+            }
+        }
+    }
+
+    private void menuConteiner() {
+        while (true) {
+            menuView.menuConteiner();
             menuView.mostrarMensagem("\nEsolha uma opção: ");
             int opcao = scanner.nextInt();
             scanner.nextLine();
@@ -68,30 +92,6 @@ public class MenuController {
                 case 0 -> {
                     return;
                 } 
-            }
-        }
-    }
-
-    private void menuPessoa() {
-        while (true) {
-            menuView.menuPessoa();
-            int opcao = scanner.nextInt();
-            scanner.nextLine();
-
-            while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 0){
-                menuView.mostrarMensagem("Opção inválida");
-                menuView.mostrarMensagem("Escolha uma opção: ");
-                opcao = scanner.nextInt();
-                scanner.nextLine();
-            }
-            
-            switch (opcao) {
-                case 1 -> menuView.mostrarMensagem("Cadastrando Capitão...");
-                case 2 -> menuView.mostrarMensagem("Cadastrando Tripulante...");
-                case 3 -> menuView.mostrarMensagem("Cadastrando Passageiro...");
-                case 0 -> {
-                    return;
-                }   
             }
         }
     }

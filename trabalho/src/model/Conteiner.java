@@ -1,7 +1,18 @@
 package model;
 
 public class Conteiner {
+    private int idConteiner;
     private double carga; 
+
+    public void setIdConteiner(int idConteiner){
+        if(idConteiner > 0){
+            this.idConteiner = idConteiner;
+        }
+    }
+
+    public int getIdConteiner(){
+        return idConteiner;
+    }
 
     public void setCarga(double carga){
         if(carga >= 0 && carga <= 2){
@@ -15,7 +26,8 @@ public class Conteiner {
 
     public Conteiner(){}
 
-    public Conteiner(double carga){
+    public Conteiner(double carga, idConteiner){
         setCarga(carga);
+        setIdConteiner(idConteiner);
     }
 }

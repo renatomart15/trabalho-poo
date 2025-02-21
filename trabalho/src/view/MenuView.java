@@ -7,10 +7,9 @@ public class MenuView {
 
     public void menuPrincipal(){
         System.out.println("\n===== Menu do Sistema =====");
-        System.out.println("\n 1. Cadastrar Embarcacao");
-        System.out.println(" 2. Cadastrar Carga");
-        System.out.println(" 3. Cadastrar Pessoa");
-        System.out.println(" 4. Gerenciar Eclusa");
+        System.out.println("\n 1. Gerenciar Embarcacoes");
+        System.out.println(" 2. Cadastrar Conteiner");
+        System.out.println(" 3. Gerenciar Eclusa");
         System.out.println(" 0. Sair\n");
     }
 
@@ -19,14 +18,12 @@ public class MenuView {
         System.out.println("\n 1. Cadastrar NavioCargueiro");
         System.out.println(" 2. Cadastrar Cruzeiro");
         System.out.println(" 3. Cadastrar Lancha");
+        System.out.println(" 4. Listar Embarcações");
         System.out.println(" 0. Voltar\n");
     }
 
-    public void menuPessoa(){
-        System.out.println("\n===== Menu de Pessoa =====");
-        System.out.println("\n 1. Cadastrar Capitao");
-        System.out.println(" 2. Cadastrar Tripulante");
-        System.out.println(" 3. Cadastrar Passageiro");
+    public void menuCarga(){
+        System.out.println("\n===== Menu de Conteiner =====");
         System.out.println(" 0. Voltar\n");
     }
 
