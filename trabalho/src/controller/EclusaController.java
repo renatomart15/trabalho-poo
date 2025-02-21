@@ -9,13 +9,13 @@ public class EclusaController {
     private EclusaView view;
 
     public void adicionarEmbarcacao(Embarcacao embarcacao){
-        eclusa.adicionarEmbarcacaoNaFila(embarcacao);
-        view.mostrarMensagem("Embarcacao " + embarcacao.getNome() + " adicionada na fila.");
-    }
-
-    public void adicionarEmbarcacao(Embarcacao embarcacao){
         eclusa.adicionarEmbarcacao(embarcacao);
         view.mostrarMensagem("Embarcacao " + embarcacao.getNome() + " adicionada");
+    }
+
+    public void adicionarEmbarcacaoNaFila(Embarcacao embarcacao){
+        eclusa.adicionarEmbarcacaoNaFila(embarcacao);
+        view.mostrarMensagem("Embarcacao " + embarcacao.getNome() + " adicionada na fila.");
     }
 
     public void operarEclusa(){
@@ -31,8 +31,11 @@ public class EclusaController {
         }
     }
 
-    public void listarEmbarcaoes(){
-        
+    public void listarEmbarcacoes(){
+        menuView.mostrarMensagem("===== Embarcações Cadastradas =====");
+        for (Embarcacao e : listaDeEmbarcacoes) {
+            menuView.mostrarMensagem("- " + e.getNome());
+        }
     }
 
     public EclusaController(Eclusa eclusa, EclusaView view) {
