@@ -10,6 +10,11 @@ public class MenuController {
     private Eclusa eclusa;
     private EclusaView eclusaView;
     private MenuView menuView;
+    private NavioCargueiroController navioCargueiroController;
+    private LanchaController lanchaController;
+    private CruzeiroController cruzeiroController;
+    private ConteinerController conteinerController;
+    private CapitaoController capitaoController;
 
     public MenuController() {
         this.scanner = new Scanner(System.in);
