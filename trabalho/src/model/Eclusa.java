@@ -60,5 +60,6 @@ public class Eclusa{
         setComprimento(comprimento);
         setLargura(largura);
         filaDeEspera = new LinkedList<>();
+        listaDeEmbarcacoes = new LinkedList<>();
     }
 }

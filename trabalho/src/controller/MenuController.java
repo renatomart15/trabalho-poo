@@ -51,7 +51,7 @@ public class MenuController {
     private void menuEmbarcacao() {
         while (true) {
             menuView.menuEmbarcacao();
-            menuView.mostrarMensagem("\nEsolha uma opção: ");
+            menuView.mostrarMensagem("\nEscolha uma opção: ");
             int opcao = scanner.nextInt();
 
             while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4 && opcao != 0){
@@ -75,7 +75,7 @@ public class MenuController {
     private void menuConteiner() {
         while (true) {
             menuView.menuConteiner();
-            menuView.mostrarMensagem("\nEsolha uma opção: ");
+            menuView.mostrarMensagem("\nEscolha uma opção: ");
             int opcao = scanner.nextInt();
 
             while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 0){
