@@ -22,7 +22,7 @@ public class MenuView {
         System.out.println(" 0. Voltar\n");
     }
 
-    public void menuCarga(){
+    public void menuConteiner(){
         System.out.println("\n===== Menu de Conteiner =====");
         System.out.println(" 0. Voltar\n");
     }

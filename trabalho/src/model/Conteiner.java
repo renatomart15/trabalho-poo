@@ -26,7 +26,7 @@ public class Conteiner {
 
     public Conteiner(){}
 
-    public Conteiner(double carga, idConteiner){
+    public Conteiner(double carga, int idConteiner){
         setCarga(carga);
         setIdConteiner(idConteiner);
     }

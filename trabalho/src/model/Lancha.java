@@ -14,7 +14,16 @@ public class Lancha extends Embarcacao{
 
     public Lancha(){}
 
-    public Lancha(double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido){
-        super(comprimento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+    public Lancha(String nome, double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido){
+        setNome(nome);
+        setComprimento(comprimento);
+        setLargura(largura);
+        setCargaMaxima(cargaMaxima);
+        setPortoOrigem(portoOrigem);
+        setPortoDestino(portoDestino);
+        setPais(pais);
+        setId(id);
+        setCapitao(capitao);
+        setSentido(sentido);    
     }
 }

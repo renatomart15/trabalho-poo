@@ -13,6 +13,11 @@ public class EclusaController {
         view.mostrarMensagem("Embarcacao " + embarcacao.getNome() + " adicionada na fila.");
     }
 
+    public void adicionarEmbarcacao(Embarcacao embarcacao){
+        eclusa.adicionarEmbarcacao(embarcacao);
+        view.mostrarMensagem("Embarcacao " + embarcacao.getNome() + " adicionada");
+    }
+
     public void operarEclusa(){
         if (eclusa.filaVazia()) {
             view.mostrarMensagem("Nenhuma embarcação aguardando na fila.");
@@ -24,6 +29,10 @@ public class EclusaController {
             view.mostrarEstadoEclusa(eclusa.estaCheia());
             view.mostrarMensagem("Embarcação " + embarcacao.getNome() + " passou para o outro lado.");
         }
+    }
+
+    public void listarEmbarcaoes(){
+        
     }
 
     public EclusaController(Eclusa eclusa, EclusaView view) {

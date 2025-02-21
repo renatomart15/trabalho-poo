@@ -30,21 +30,21 @@ public class NavioCargueiro extends Embarcacao{
     }
 
     public void addConteiner(Conteiner conteiner){
-        if((getCargaAtual() + conteiner.getCarga() <= getCargaMaxima()) && conteiners.size() + 1 <= quantMaxConteiners){
+        if((getCarga() + conteiner.getCarga() <= getCargaMaxima()) && conteiners.size() + 1 <= quantMaxConteiners){
             conteiners.add(conteiner);
             adicionarCarga(conteiner.getCarga());
         }
     }
 
     public void addTripulante(Tripulante tripulante){
-        if((tripulante != null) && (tripulacao.size() + 1 <= quantMaxFuncionarios)){
+        if((tripulante != null) && (tripulacao.size() + 1 <= quantMaxTripulantes)){
             tripulacao.add(tripulante);
         }
     }
 
     public String toString(){
         return "Dimensoes do navio: " + getComprimento() + "x" + getLargura() +
-        "\nCarga: " + getCargaAtual() + "/" + getCargaMaxima() +
+        "\nCarga: " + getCarga() + "/" + getCargaMaxima() +
         "\nPorto de Origem: " + getPortoOrigem() +
         "\nPorto de Destino: " + getPortoDestino() + 
         "\nPais: " + getPais() +
@@ -56,8 +56,17 @@ public class NavioCargueiro extends Embarcacao{
 
     public NavioCargueiro(){}
 
-    public NavioCargueiro(double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido, int quantMaxConteiners){
-        super(comprimento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+    public NavioCargueiro(String nome, double comprimento, double largura, double cargaMaxima, String portoOrigem, String portoDestino, String pais, int id, Capitao capitao, String sentido, int quantMaxConteiners){
+        setNome(nome);
+        setComprimento(comprimento);
+        setLargura(largura);
+        setCargaMaxima(cargaMaxima);
+        setPortoOrigem(portoOrigem);
+        setPortoDestino(portoDestino);
+        setPais(pais);
+        setId(id);
+        setCapitao(capitao);
+        setSentido(sentido);
         setQuantMaxConteiners(quantMaxConteiners);
     }
 }

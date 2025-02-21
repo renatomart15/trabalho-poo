@@ -4,14 +4,14 @@ import model.*;
 import view.*;
 import java.util.*;
 
-public class NavioCargueiroController{
+public class LanchaController{
     private Scanner scanner;
     private EclusaController eclusaController;
     private Eclusa eclusa;
     private EclusaView eclusaView;
     private MenuView menuView;
 
-    public void cadastrarNavioCargueiro(){
+    public void cadastrarLancha(){
         String nome;
         double comprimento;
         double largura;

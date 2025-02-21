@@ -24,13 +24,11 @@ public class MenuController {
             menuView.menuPrincipal();
             menuView.mostrarMensagem("\nEscolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine();
 
             while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 0){
                 menuView.mostrarMensagem("Opção inválida");
                 menuView.mostrarMensagem("Escolha uma opção: ");
                 opcao = scanner.nextInt();
-                scanner.nextLine();
             }
             
             switch (opcao) {
@@ -50,19 +48,17 @@ public class MenuController {
             menuView.menuEmbarcacao();
             menuView.mostrarMensagem("\nEsolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine();
 
             while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 4 && opcao != 0){
                 menuView.mostrarMensagem("Opção inválida");
                 menuView.mostrarMensagem("Escolha uma opção: ");
                 opcao = scanner.nextInt();
-                scanner.nextLine();
             }
             
             switch (opcao) {
-                case 1 -> menuView.mostrarMensagem("Cadastrando Navio Cargueiro...");
-                case 2 -> menuView.mostrarMensagem("Cadastrando Cruzeiro...");
-                case 3 -> menuView.mostrarMensagem("Cadastrando Lancha...");
+                case 1 -> cadastrarNavioCargueiro();
+                case 2 -> cadastrarCruzeiro();
+                case 3 -> cadastrarLancha();
                 case 4 -> menuView.mostrarMensagem("Listanto Embarcações...");
                 case 0 -> {
                     return;
@@ -76,13 +72,11 @@ public class MenuController {
             menuView.menuConteiner();
             menuView.mostrarMensagem("\nEsolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine();
 
             while(opcao != 1 && opcao != 2 && opcao != 3 && opcao != 0){
                 menuView.mostrarMensagem("Opção inválida");
                 menuView.mostrarMensagem("Escolha uma opção: ");
                 opcao = scanner.nextInt();
-                scanner.nextLine();
             }
             
             switch (opcao) {
@@ -100,13 +94,11 @@ public class MenuController {
         while (true) {
             menuView.menuEclusa();
             int opcao = scanner.nextInt();
-            scanner.nextLine();
 
             while(opcao != 1 && opcao != 2 && opcao != 0){
                 menuView.mostrarMensagem("Opção inválida");
                 menuView.mostrarMensagem("Escolha uma opção: ");
                 opcao = scanner.nextInt();
-                scanner.nextLine();
             }
             
             switch (opcao) {
