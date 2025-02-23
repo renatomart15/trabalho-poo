@@ -7,7 +7,6 @@ public class NavioCargueiro extends Embarcacao{
     ArrayList<Conteiner> conteiners = new ArrayList();
 
     private int quantMaxTripulantes;
-    ArrayList<Tripulante> tripulacao = new ArrayList();
 
     public void setQuantMaxConteiners(int quantMaxConteiners){
         if(quantMaxConteiners > 0){
@@ -33,12 +32,6 @@ public class NavioCargueiro extends Embarcacao{
         if((getCarga() + conteiner.getCarga() <= getCargaMaxima()) && conteiners.size() + 1 <= quantMaxConteiners){
             conteiners.add(conteiner);
             adicionarCarga(conteiner.getCarga());
-        }
-    }
-
-    public void addTripulante(Tripulante tripulante){
-        if((tripulante != null) && (tripulacao.size() + 1 <= quantMaxTripulantes)){
-            tripulacao.add(tripulante);
         }
     }
 

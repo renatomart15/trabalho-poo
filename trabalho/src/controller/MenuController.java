@@ -3,25 +3,31 @@ package controller;
 import model.*;
 import view.*;
 import java.util.Scanner;
+import controller.*;
 
 public class MenuController {
     private Scanner scanner;
-    private EclusaController eclusaController;
     private Eclusa eclusa;
-    private EclusaView eclusaView;
-    private MenuView menuView;
+    private EclusaView eclusaView = new EclusaView();
+    private MenuView menuView = new MenuView();
+    private EclusaController eclusaController;
+    
     private NavioCargueiroController navioCargueiroController;
     private LanchaController lanchaController;
     private CruzeiroController cruzeiroController;
     private ConteinerController conteinerController;
-    private CapitaoController capitaoController;
 
-    public MenuController() {
+    public MenuController(Eclusa eclusa) {
         this.scanner = new Scanner(System.in);
-        this.eclusa = new Eclusa();
+        this.eclusa = eclusa;
         this.eclusaView = new EclusaView();
         this.menuView = new MenuView();
         this.eclusaController = new EclusaController(eclusa, eclusaView);
+
+        this.navioCargueiroController =  new NavioCargueiroController(eclusa);
+        this.lanchaController = new LanchaController(eclusa);
+        this.cruzeiroController =  new CruzeiroController(eclusa);
+        this.conteinerController = new ConteinerController();
     }
 
     public void iniciarMenu() {
@@ -61,9 +67,9 @@ public class MenuController {
             }
             
             switch (opcao) {
-                case 1 -> cadastrarNavioCargueiro();
-                case 2 -> cadastrarCruzeiro();
-                case 3 -> cadastrarLancha();
+                case 1 -> eclusaController.adicionarEmbarcacaoNaFila(navioCargueiroController.cadastrarNavioCargueiro());
+                case 2 -> eclusaController.adicionarEmbarcacaoNaFila(cruzeiroController.cadastrarCruzeiro());
+                case 3 -> eclusaController.adicionarEmbarcacaoNaFila(lanchaController.cadastrarLancha());
                 case 4 -> menuView.mostrarMensagem("Listanto Embarcações...");
                 case 0 -> {
                     return;
@@ -85,9 +91,6 @@ public class MenuController {
             }
             
             switch (opcao) {
-                case 1 -> menuView.mostrarMensagem("Cadastrando Navio Cargueiro...");
-                case 2 -> menuView.mostrarMensagem("Cadastrando Cruzeiro...");
-                case 3 -> menuView.mostrarMensagem("Cadastrando Lancha...");
                 case 0 -> {
                     return;
                 } 
@@ -107,7 +110,7 @@ public class MenuController {
             }
             
             switch (opcao) {
-                case 1 -> menuView.mostrarMensagem("Cadastrando Eclusa...");
+                case 1 -> eclusa = eclusaController.cadastrarEclusa();
                 case 2 -> eclusaController.operarEclusa();
                 case 0 -> {
                     return;

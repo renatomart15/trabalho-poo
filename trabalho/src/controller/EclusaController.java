@@ -2,16 +2,14 @@ package controller;
 
 import model.Eclusa;
 import model.Embarcacao;
-import view.EclusaView;
+import view.*;
+import java.util.*;
 
 public class EclusaController {
+    Scanner scanner = new Scanner(System.in);
     private Eclusa eclusa;
     private EclusaView view;
-
-    public void adicionarEmbarcacao(Embarcacao embarcacao){
-        eclusa.adicionarEmbarcacao(embarcacao);
-        view.mostrarMensagem("Embarcacao " + embarcacao.getNome() + " adicionada");
-    }
+    private MenuView menuView = new MenuView();
 
     public void adicionarEmbarcacaoNaFila(Embarcacao embarcacao){
         eclusa.adicionarEmbarcacaoNaFila(embarcacao);
@@ -31,11 +29,20 @@ public class EclusaController {
         }
     }
 
-    public void listarEmbarcacoes(){
-        menuView.mostrarMensagem("===== Embarcações Cadastradas =====");
-        for (Embarcacao e : listaDeEmbarcacoes) {
-            menuView.mostrarMensagem("- " + e.getNome());
-        }
+    public Eclusa cadastrarEclusa(){
+        double comprimento;
+        double largura;
+        MenuView menuView = new MenuView();
+
+        menuView.mostrarMensagem("Comprimento: ");
+        comprimento =  scanner.nextDouble();
+
+        menuView.mostrarMensagem("Largura: ");
+        largura =  scanner.nextDouble();
+
+        eclusa = new Eclusa(comprimento, largura);
+
+        return eclusa;
     }
 
     public EclusaController(Eclusa eclusa, EclusaView view) {

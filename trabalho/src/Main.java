@@ -1,9 +1,12 @@
 import view.MenuView;
 import controller.MenuController;
 
+import model.*;
+
 public class Main {
     public static void main(String[] args) {
-        MenuController menuController = new MenuController();
+        Eclusa eclusa = new Eclusa(); 
+        MenuController menuController = new MenuController(eclusa);
         menuController.iniciarMenu();
     }
 }

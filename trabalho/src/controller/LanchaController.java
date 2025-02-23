@@ -11,7 +11,15 @@ public class LanchaController{
     private EclusaView eclusaView;
     private MenuView menuView;
 
-    public void cadastrarLancha(){
+    public LanchaController(Eclusa eclusa){
+        this.scanner = new Scanner(System.in);
+        this.eclusa = eclusa;
+        this.eclusaView = new EclusaView();
+        this.menuView = new MenuView();
+        this.eclusaController = new EclusaController(eclusa, eclusaView);
+    }
+
+    public Embarcacao cadastrarLancha(){
         String nome;
         double comprimento;
         double largura;
@@ -21,7 +29,7 @@ public class LanchaController{
         String portoDestino;
         String pais;
         int id; 
-        Capitao capitao;
+        Capitao capitao = new Capitao();
         String sentido;
 
         int quantMaxConteiners;
@@ -34,9 +42,12 @@ public class LanchaController{
 
         menuView.mostrarMensagem("Comprimento: ");
         comprimento = scanner.nextDouble();
-        
+
         menuView.mostrarMensagem("Largura: ");
         largura = scanner.nextDouble();
+
+        menuView.mostrarMensagem("Carga Maxima: ");
+        cargaMaxima = scanner.nextDouble();
 
         menuView.mostrarMensagem("Porto de Origem: ");
         portoOrigem = scanner.nextLine();
@@ -58,6 +69,8 @@ public class LanchaController{
         menuView.mostrarMensagem("Sentido: ");
         sentido = scanner.nextLine();
 
-        eclusaController.adicionarEmbarcacao(new NavioCargueiro(nome, comprimento, largura, portoOrigem, portoDestino, pais, id, capitao, sentido));
+        Embarcacao embarcacao = new Embarcacao(nome, comprimento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+
+        return embarcacao;
     }
 }

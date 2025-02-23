@@ -8,7 +8,7 @@ public class Eclusa{
     private double largura;
     private boolean cheia = false; // true = nível do mar, false = nível do rio
     private Queue<Embarcacao> filaDeEspera;
-    private Queue<Embarcacao> listaDeEmbarcacoes;
+    public Queue<Embarcacao> listaDeEmbarcacoes;
 
     public void setComprimento(double comprimento){
         if(comprimento >= 0 && comprimento <= 300){
@@ -54,7 +54,11 @@ public class Eclusa{
         return filaDeEspera.isEmpty();
     }
 
-    public Eclusa(){}
+    public Eclusa(){
+        filaDeEspera = new LinkedList<>();
+        listaDeEmbarcacoes = new LinkedList<>();
+        
+    }
 
     public Eclusa(double comprimento, double largura){
         setComprimento(comprimento);

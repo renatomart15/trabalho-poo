@@ -11,7 +11,15 @@ public class NavioCargueiroController{
     private EclusaView eclusaView;
     private MenuView menuView;
 
-    public void cadastrarNavioCargueiro(){
+    public NavioCargueiroController(Eclusa eclusa){
+        this.scanner = new Scanner(System.in);
+        this.eclusa = eclusa;
+        this.eclusaView = new EclusaView();
+        this.menuView = new MenuView();
+        this.eclusaController = new EclusaController(eclusa, eclusaView);
+    }
+
+    public Embarcacao cadastrarNavioCargueiro(){
         String nome;
         double comprimento;
         double largura;
@@ -21,7 +29,7 @@ public class NavioCargueiroController{
         String portoDestino;
         String pais;
         int id; 
-        Capitao capitao;
+        Capitao capitao = new Capitao();
         String sentido;
 
         int quantMaxConteiners;
@@ -37,6 +45,9 @@ public class NavioCargueiroController{
         
         menuView.mostrarMensagem("Largura: ");
         largura = scanner.nextDouble();
+
+        menuView.mostrarMensagem("Carga Maxima: ");
+        cargaMaxima = scanner.nextDouble();
 
         menuView.mostrarMensagem("Porto de Origem: ");
         portoOrigem = scanner.nextLine();
@@ -58,6 +69,11 @@ public class NavioCargueiroController{
         menuView.mostrarMensagem("Sentido: ");
         sentido = scanner.nextLine();
 
-        eclusaController.adicionarEmbarcacao(new NavioCargueiro(nome, comprimento, largura, portoOrigem, portoDestino, pais, id, capitao, sentido));
+        menuView.mostrarMensagem("Quatidade max. de conteiners: ");
+        quantMaxConteiners = scanner.nextInt();
+
+        Embarcacao embarcacao = new Embarcacao(nome, comprimento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+
+        return embarcacao;
     }
 }

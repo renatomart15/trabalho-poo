@@ -17,6 +17,6 @@ public class Lancha extends Embarcacao{
         setPais(pais);
         setId(id);
         setCapitao(capitao);
-        setSentido(sentido);    
+        setSentido(sentido);  
     }
 }

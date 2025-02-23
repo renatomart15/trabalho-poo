@@ -11,7 +11,15 @@ public class CruzeiroController{
     private EclusaView eclusaView;
     private MenuView menuView;
 
-    public void cadastrarCruzeiro(){
+    public CruzeiroController(Eclusa eclusa){
+        this.scanner = new Scanner(System.in);
+        this.eclusa = eclusa;
+        this.eclusaView = new EclusaView();
+        this.menuView = new MenuView();
+        this.eclusaController = new EclusaController(eclusa, eclusaView);
+    }
+
+    public Embarcacao cadastrarCruzeiro(){
         String nome;
         double comprimento;
         double largura;
@@ -21,8 +29,9 @@ public class CruzeiroController{
         String portoDestino;
         String pais;
         int id; 
-        Capitao capitao;
+        Capitao capitao = new Capitao();
         String sentido;
+        int quantMaxPassageiros;
 
         int quantMaxConteiners;
         ArrayList<Conteiner> conteiners = new ArrayList();
@@ -37,6 +46,9 @@ public class CruzeiroController{
         
         menuView.mostrarMensagem("Largura: ");
         largura = scanner.nextDouble();
+
+        menuView.mostrarMensagem("Carga Maxima: ");
+        cargaMaxima = scanner.nextDouble();
 
         menuView.mostrarMensagem("Porto de Origem: ");
         portoOrigem = scanner.nextLine();
@@ -58,6 +70,11 @@ public class CruzeiroController{
         menuView.mostrarMensagem("Sentido: ");
         sentido = scanner.nextLine();
 
-        eclusaController.adicionarEmbarcacao(new NavioCargueiro(nome, comprimento, largura, portoOrigem, portoDestino, pais, id, capitao, sentido));
+        menuView.mostrarMensagem("Quantidade max. de passageiros: ");
+        quantMaxPassageiros = scanner.nextInt();
+
+        Embarcacao embarcacao = new Embarcacao(nome, comprimento, largura, cargaMaxima, portoOrigem, portoDestino, pais, id, capitao, sentido);
+
+        return embarcacao;
     }
 }
